@@ -10,7 +10,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.setFragmentResultListener
 
 class FragmentA : Fragment() {
 
@@ -47,7 +46,7 @@ class FragmentA : Fragment() {
             val backgroundColor = ColorGenerator.generateColor()
 
             childFragmentManager.setFragmentResult(
-                RESULT_KEY_A_A,
+                RESULT_KEY_A,
                 bundleOf(RESUlT_BUNDLE to backgroundColor)
             )
             childFragmentManager.popBackStackImmediate(
@@ -60,13 +59,5 @@ class FragmentA : Fragment() {
                 .addToBackStack("fragmentA")
                 .commit()
         }
-
-        setFragmentResultListener(RESULT_KEY_A) { _, bundle ->
-            view.setBackgroundColor(bundle.getInt(RESUlT_BUNDLE))
-        }
-
-
     }
-
-
 }
