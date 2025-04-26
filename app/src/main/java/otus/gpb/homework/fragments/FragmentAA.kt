@@ -9,7 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 
-class FragmentAA: Fragment() {
+class FragmentAA : Fragment() {
     private val SAVED_COLOR = "saved_color"
     private var savedBackgroundColor: Int = ColorGenerator.generateColor()
 
@@ -36,12 +36,12 @@ class FragmentAA: Fragment() {
 
             parentFragmentManager.setFragmentResult(
                 RESULT_KEY_A_A,
-                bundleOf(RESUlT_BUNDLE to backgroundColor)
+                bundleOf(RESULT_BUNDLE to backgroundColor)
             )
         }
 
         setFragmentResultListener(RESULT_KEY_A) { _, bundle ->
-            savedBackgroundColor = bundle.getInt(RESUlT_BUNDLE)
+            savedBackgroundColor = bundle.getInt(RESULT_BUNDLE)
             view.setBackgroundColor(savedBackgroundColor)
         }
     }

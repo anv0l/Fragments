@@ -47,7 +47,7 @@ class FragmentA : Fragment() {
 
             childFragmentManager.setFragmentResult(
                 RESULT_KEY_A,
-                bundleOf(RESUlT_BUNDLE to backgroundColor)
+                bundleOf(RESULT_BUNDLE to backgroundColor)
             )
             childFragmentManager.popBackStackImmediate(
                 "fragmentA",

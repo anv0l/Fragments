@@ -12,7 +12,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.btn_open_fragment_a).setOnClickListener {
-            supportFragmentManager.popBackStackImmediate("fragmentA", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            supportFragmentManager.popBackStackImmediate(
+                "fragmentA",
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
 
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_view_container, FragmentA())
@@ -21,7 +24,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_open_fragment_b).setOnClickListener {
-            supportFragmentManager.popBackStackImmediate("fragmentB", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            supportFragmentManager.popBackStackImmediate(
+                "fragmentB",
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
 
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_view_container, FragmentB())

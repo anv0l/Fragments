@@ -5,10 +5,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txt_fragment_ba_title"
+        android:id="@+id/txt_fragment_bb_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment BA"
+        android:text="Fragment BB"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,13 +16,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_open_fragment_bb"
+        android:id="@+id/btn_send_color_to_ba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:text="Open fragment BB"
+        android:text="Send Color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_fragment_ba_title" />
+        app:layout_constraintTop_toBottomOf="@id/txt_fragment_bb_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
