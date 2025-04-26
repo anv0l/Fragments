@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.activityViewModels
 
 class FragmentBA : Fragment() {
+    private val parentViewModel: ColorViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,8 +22,8 @@ class FragmentBA : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setFragmentResultListener(RESULT_KEY_B) { _, bundle ->
-            view.setBackgroundColor(bundle.getInt(RESULT_BUNDLE))
+        parentViewModel.currentColor.observe(viewLifecycleOwner) { color ->
+            view.setBackgroundColor(color)
         }
 
         if (!requireContext().isLandscape()) {
@@ -33,5 +34,9 @@ class FragmentBA : Fragment() {
                     .commit()
             }
         }
+    }
+
+    fun updateColor(color: Int) {
+        view?.setBackgroundColor(color)
     }
 }

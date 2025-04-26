@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 
 class FragmentBB : Fragment() {
+    private val parentViewModel: ColorViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,11 +24,7 @@ class FragmentBB : Fragment() {
 
         view.findViewById<Button>(R.id.btn_send_color_to_ba).setOnClickListener {
             val backgroundColor = ColorGenerator.generateColor()
-
-            parentFragmentManager.setFragmentResult(
-                RESULT_KEY_B,
-                bundleOf(RESULT_BUNDLE to backgroundColor)
-            )
+            parentViewModel.setColor(backgroundColor)
 
             if (!requireContext().isLandscape()) {
                 parentFragmentManager.popBackStack()
